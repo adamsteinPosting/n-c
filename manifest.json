@@ -1,0 +1,26 @@
+{
+  "manifest_version": 2,
+  "name": "Coincidence Pupper",
+  "version": "0.4.0",
+
+  "description": "Sniffs Out Coincidences",
+
+  "permissions": ["tabs", "storage"],
+
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": [
+        "./dist/js/theList.js",
+        "./dist/js/pupper.js",
+        "./dist/js/pupperLoader.js"
+      ],
+      "run_at": "document_end"
+    }
+  ],
+  "icons": {
+    "48": "images/n-c-48.png",
+    "96": "images/n-c-96.png",
+    "128": "images/n-c-128.png"
+  }
+}
