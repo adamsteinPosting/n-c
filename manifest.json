@@ -11,9 +11,8 @@
     {
       "matches": ["<all_urls>"],
       "js": [
-        "./dist/js/theEdge.js",
-        "./dist/js/pupper.js",
-        "./dist/js/pupperLoader.js"
+        "./js/compiledTrie.js",
+        "./js/pupper.js"
       ],
       "run_at": "document_end"
     }
