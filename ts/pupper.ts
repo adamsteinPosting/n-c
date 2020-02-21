@@ -26,6 +26,7 @@ class CoincidenceDetector {
             node.parentNode.nodeName !== "TEXTAREA" &&
             node.parentNode.isContentEditable !== true &&
             node.nodeValue.trim().length > 3 &&
+            // prevent re-iteration for mutations
             !node.nodeValue.includes("(((")
             ? NodeFilter.FILTER_ACCEPT
             : NodeFilter.FILTER_REJECT;
@@ -59,7 +60,6 @@ class CoincidenceDetector {
   private mutationRecord(mutations: any) {
     for (let mutation of mutations) {
       for (let nodes of mutation.addedNodes) {
-        // prevent re-iteration for mutations
           this.mutationList.push(nodes);
       }
     }
