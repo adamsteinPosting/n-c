@@ -25,7 +25,8 @@ class CoincidenceDetector {
             node.parentNode.nodeName !== "FORM" &&
             node.parentNode.nodeName !== "TEXTAREA" &&
             node.parentNode.isContentEditable !== true &&
-            node.nodeValue.trim().length > 3
+            node.nodeValue.trim().length > 3 &&
+            !node.nodeValue.includes("(((")
             ? NodeFilter.FILTER_ACCEPT
             : NodeFilter.FILTER_REJECT;
         }
